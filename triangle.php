@@ -1,10 +1,11 @@
 <?php
 
 // Triangle Upside Left
-function upsideLeft($num=5){
+function upsideLeft($num = 5)
+{
     echo "<pre>";
-    for ($i = 0; $i < $num; $i++){
-        for($j = 0; $j <= $i; $j++ ){
+    for ($i = 0; $i < $num; $i++) {
+        for ($j = 0; $j <= $i; $j++) {
             echo "* ";
         }
         echo "<br>";
@@ -13,10 +14,11 @@ function upsideLeft($num=5){
 }
 
 // Triangle Downside Left
-function downsideLeft($num=5){
+function downsideLeft($num = 5)
+{
     echo "<pre>";
-    for ($i = $num; $i > 0 ; $i--){
-        for($j = 0; $j < $i; $j++ ){
+    for ($i = $num; $i > 0; $i--) {
+        for ($j = 0; $j < $i; $j++) {
             echo "* ";
         }
         echo "<br>";
@@ -25,13 +27,14 @@ function downsideLeft($num=5){
 }
 
 // Triangle Upside Right
-function upsideRight($num=5){
+function upsideRight($num = 5)
+{
     echo "<pre>";
-    for ($i = 0; $i < $num; $i++){
-        for($k = $num; $k > $i+1; $k-- ){
+    for ($i = 0; $i < $num; $i++) {
+        for ($k = $num; $k > $i + 1; $k--) {
             echo "  ";
         }
-        for($j = 0; $j <= $i; $j++ ){
+        for ($j = 0; $j <= $i; $j++) {
             echo "* ";
         }
         echo "<br>";
@@ -40,13 +43,14 @@ function upsideRight($num=5){
 }
 
 // Triangle Downside Right
-function downsideRight($num=5){
+function downsideRight($num = 5)
+{
     echo "<pre>";
-    for ($i = $num; $i > 0; $i--){
-        for($k = $i; $k < $num; $k++ ){
+    for ($i = $num; $i > 0; $i--) {
+        for ($k = $i; $k < $num; $k++) {
             echo "  ";
         }
-        for($j = 0; $j < $i; $j++ ){
+        for ($j = 0; $j < $i; $j++) {
             echo "* ";
         }
         echo "<br>";
@@ -55,9 +59,33 @@ function downsideRight($num=5){
 }
 
 
-function choose(){
-    if(isset($_POST['submit'])){
-        
+function choose()
+{
+    if (isset($_POST['submit'])) {
     }
 }
-?>
+
+function choice()
+{
+
+
+    if (isset($_POST['submit'])) {
+        $choose =  $_POST['choose'];
+        switch ($choose) {
+            case 1:
+                echo upsideLeft();
+                break;
+            case 2:
+                echo downsideLeft();
+                break;
+            case 3:
+                echo upsideRight();
+                break;
+            case 4:
+                echo downsideRight();
+                break;
+            default:
+                echo 'Silahkan Masukkan Pilihan Terlebih Dahulu';
+        }
+    }
+};
